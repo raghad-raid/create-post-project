@@ -9,9 +9,10 @@ postButton.addEventListener('click', () => {
   if (!text) return;
 
   const posts = getSavedPosts();
-  posts.push(text); 
+  posts.unshift(text); 
   savePosts(posts);
-  renderPost(text, posts.length - 1); 
+  renderPost(text,0); 
+  reloadPosts();
   postContent.value = '';
 });
 
